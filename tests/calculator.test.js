@@ -15,4 +15,8 @@ describe("String Calculator", () => {
     expect(add("1, 5, 89")).toBe(95);
   });
 
+  test('should return the sum for new line-separated numbers', () => {
+    expect(add("1\n2,3")).toBe(6);
+});
+
 });
