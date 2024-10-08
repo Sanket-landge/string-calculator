@@ -17,6 +17,10 @@ describe("String Calculator", () => {
 
   test('should return the sum for new line-separated numbers', () => {
     expect(add("1\n2,3")).toBe(6);
-});
+  });
+
+  test('should return the sum for custom delimiters', () => {
+    expect(add("//;\n9;7")).toBe(16);
+  });
 
 });
