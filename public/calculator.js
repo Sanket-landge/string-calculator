@@ -1,4 +1,17 @@
 
+/**
+ * Adds numbers from a string, separated by a delimiter (default: commas or newlines).
+ * 
+ * The function can handle:
+ * - Empty strings (returns 0).
+ * - Numbers separated by commas or newlines.
+ * - Custom delimiters specified in the format: "//[delimiter]\n[numbers]".
+ * - Throws an error if any negative numbers are encountered, listing the negative numbers.
+ *
+ * @param {string} numbers - A string containing numbers separated by a delimiter.
+ * @returns {number} The sum of the numbers in the string. Invalid numbers (non-parsable) are treated as 0.
+ * @throws {Error} If negative numbers are found in the string, throws an error listing them.
+ */
 function add(numbers) {
     // If the input string is empty, return 0
     if (numbers === "") return 0;
@@ -11,7 +24,7 @@ function add(numbers) {
         numbers = parts[1]; // Assign the part containing the numbers to `numbers`
     }
     
-    const nums = numbers.split(delimiter).map((num) => parseInt(num));
+    const nums = numbers.split(delimiter).map(num => parseInt(num));
 
     const negatives = nums.filter(num => num < 0);
     if (negatives.length > 0) {
