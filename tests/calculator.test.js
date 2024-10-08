@@ -7,8 +7,12 @@ describe("String Calculator", () => {
     expect(add("")).toBe(0);
   });
 
-  test("should return 1 for an non-empty string", () => {
-    expect(add("999")).toBe(1);
+  test('should return the number for a single number', () => {
+    expect(add("1")).toBe(1);
   });
-  
+
+  test('should return the sum for comma-separated numbers', () => {
+    expect(add("1, 5, 89")).toBe(95);
+  });
+
 });
