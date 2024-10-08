@@ -5,6 +5,10 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+
+// Serve Bootstrap from node_modules
+app.use('/node_modules', express.static(path.join(__dirname, 'node_modules')));
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
