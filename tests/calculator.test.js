@@ -23,8 +23,12 @@ describe("String Calculator", () => {
     expect(add("//;\n9;7")).toBe(16);
   });
 
-  test('should throw an error if any negative number is found in the string', () => {
+  test('should throw an error if any negative number is found in numbers string', () => {
     expect(() => add("1,-2,3")).toThrow("negative numbers not allowed: -2");
+  });
+
+  test('should throw an error if multiple negative numbers are found in numbers string', () => {
+    expect(() => add("-1,-2")).toThrow("negative numbers not allowed: -1, -2");
   });
 
 });
