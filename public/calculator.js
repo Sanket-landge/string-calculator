@@ -1,9 +1,15 @@
 
 function add(numbers) {
-
+    // If the input string is empty, return 0
     if (numbers === "") return 0;
 
-    const delimiter = /,|\n/;
+    // Default delimiter is a comma or newline
+    let delimiter = /,|\n/;
+    if (numbers.startsWith("//")) {
+        const parts = numbers.split("\n", 2); // Split the string into two parts: delimiter and actual numbers
+        delimiter = new RegExp(parts[0][2]);  // Create a regular expression for the custom delimiter (it starts at index 2 of the first part)
+        numbers = parts[1]; // Assign the part containing the numbers to `numbers`
+    }
     
     const nums = numbers.split(delimiter).map((num) => parseInt(num));
     return nums.reduce((sum, num) => sum + (isNaN(num) ? 0 : num), 0);
