@@ -9,11 +9,20 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body class="container">
 
     <h1>String Calculator</h1>
     <input type="text" id="inputString" placeholder="Enter numbers (e.g. 1,2,3 or //;\n1;2)">
+    <button class="btn btn-primary" onclick="calculate()">Calculate</button>
+
+    <!--Scripts-->
+    <!--calcutaor.js-->
     <script src="calculator.js"></script>
-    
+    <!--custom script-->
+    <script>
+        function calculate(){
+            alert('clicked');
+        }
+    </script>
 </body>
 </html>
