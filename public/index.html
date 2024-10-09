@@ -29,8 +29,10 @@
             try{
                 const result = add(inputValue);
                 resultElement.textContent = result;
+                errorElement.textContent = "";
             }catch(error){
                 errorElement.textContent = error.message;
+                resultElement.textContent = "";
             }
 
         }
