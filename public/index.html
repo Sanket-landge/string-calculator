@@ -4,37 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>String Calculator</title>
-    <link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="container">
+<body>
 
-    <div class="calculator">
-        <div class="card p-5 pt-3 my-5 mx-auto">
-            <!-- Dark Mode Toggle Button -->
-            <div class="dark-mode-toggle text-right">
-                <!-- Toggle switch input -->
-                <label class="switch">
-                    <input type="checkbox" id="toggleDarkMode" onclick="toggleDarkMode()">
-                    <span class="slider round"></span>
-                </label>
-                <span class="dark-mode-title">Dark Mode</span>
-            </div>
-            <h1 class="text-center my-3">String Calculator</h1>
-            <div class="form-group d-flex">
-                <input type="text" id="inputString" class="form-control w-100" placeholder="Enter numbers (e.g. 1,2,3 or //;\n1;2)">
-                <button class="btn btn-primary" onclick="calculate()">Calculate</button>
-            </div>
-            <div class="result-block">
-                <h4 class="result">Result: <span id="result" class="badge badge-success"></span></h4>
-                <p id="error" class="error"></p>
-            </div>
-        </div>    
-    </div>
-
+    <div class="overlay"></div>
+    <div class="content">
+        <div class="calculator d-flex align-items-center">
+            <div class="card p-5 pt-3 my-5 mx-auto">
+                <!-- Dark Mode Toggle Button -->
+                <div class="dark-mode-toggle text-right">
+                    <!-- Toggle switch input -->
+                    <label class="switch">
+                        <input type="checkbox" id="toggleDarkMode" onclick="toggleDarkMode()">
+                        <span class="slider round"></span>
+                    </label>
+                    <span class="dark-mode-title">Dark Mode</span>
+                </div>
+                <h1 class="text-center my-3">String Calculator</h1>
+                <div class="form-group d-flex">
+                    <input type="text" id="inputString" class="form-control w-100" placeholder="Enter numbers (e.g. 1,2,3 or //;\n1;2)">
+                    <button class="btn btn-primary" onclick="calculate()">Calculate</button>
+                </div>
+                <div class="result-block text-center">
+                    <h4 class="result">Result: <span id="result" class="badge badge-success"></span></h4>
+                    <p id="error" class="error"></p>
+                </div>
+            </div>    
+        </div>
+        </div>
 
     <!--Scripts-->
     <!-- Include the calculator logic -->

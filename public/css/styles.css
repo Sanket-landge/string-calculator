@@ -1,7 +1,27 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
 body {
-    background-color: #ffffff;
+    position: relative;
+    height: 100vh;
+    background-image: url('../assets/images/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: #000000;
     font-family: 'Arial', sans-serif;
+    padding-top: 5rem;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); 
 }
 
 .dark-mode-title{
@@ -10,16 +30,16 @@ body {
 }
 
 .calculator .card {
-    max-width: 600px; /* Set the maximum width for the card */
-    width: 100%; /* Make it responsive on smaller screens */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    transition: box-shadow 0.3s ease; /* Smooth transition */
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s ease;
     padding-top: 1rem !important;
 }
 
 /* Add a hover effect for the shadow to become more pronounced */
 .card:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .calculator h1 {
@@ -40,7 +60,7 @@ body {
 
 .calculator .result {
     display: none;
-    font-size: 1rem;
+    font-size: 1.3rem;
 }
 
 .calculator .error {
@@ -55,6 +75,10 @@ body {
 
     .calculator h1 {
         font-size: 1.3rem;
+    }
+
+    .result{
+        font-size: 1rem;
     }
 
     .form-group.d-flex {
@@ -85,7 +109,6 @@ body.dark-mode .card {
     box-shadow: 0 4px 8px rgba(255,255,255,0.2);
 }
 
-body.dark-mode input,
 body.dark-mode button {
     background-color: #444;
     color: #ffffff;
@@ -143,7 +166,6 @@ input:checked + .slider:before {
     transform: translateX(14px);
 }
 
-/* Rounded switch */
 .slider.round {
     border-radius: 20px;
 }
