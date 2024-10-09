@@ -25,8 +25,13 @@
         function calculate(){
             const inputValue = document.getElementById("inputString").value;
             const resultElement = document.getElementById("result");
-            const result = add(inputValue);
-            resultElement.textContent = result;
+            try{
+                const result = add(inputValue);
+                resultElement.textContent = result;
+            }catch(error){
+                alert(error);
+            }
+
         }
     </script>
 </body>
