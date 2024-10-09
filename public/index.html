@@ -16,7 +16,7 @@
     <button class="btn btn-primary" onclick="calculate()">Calculate</button>
 
     <h2>Result: <span id="result"></span></h2>
-
+    <p id="error"></p>
     <!--Scripts-->
     <!--calcutaor.js-->
     <script src="calculator.js"></script>
@@ -25,11 +25,12 @@
         function calculate(){
             const inputValue = document.getElementById("inputString").value;
             const resultElement = document.getElementById("result");
+            const errorElement = document.getElementById("error");
             try{
                 const result = add(inputValue);
                 resultElement.textContent = result;
             }catch(error){
-                alert(error);
+                errorElement.textContent = error.message;
             }
 
         }
