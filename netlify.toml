@@ -1,5 +1,6 @@
 [build]
-  publish = "public"
+  publish = "public"               # Directory containing your static files
+  functions = "netlify/functions"  # Directory for serverless functions
 
-[functions]
-  node_bundler = "esbuild" 
+[dev]
+  command = "npm start"        # Command to run during development (if needed)
