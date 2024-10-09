@@ -15,6 +15,8 @@
     <input type="text" id="inputString" placeholder="Enter numbers (e.g. 1,2,3 or //;\n1;2)">
     <button class="btn btn-primary" onclick="calculate()">Calculate</button>
 
+    <h2>Result: <span id="result"></span></h2>
+
     <!--Scripts-->
     <!--calcutaor.js-->
     <script src="calculator.js"></script>
@@ -22,8 +24,9 @@
     <script>
         function calculate(){
             const inputValue = document.getElementById("inputString").value;
+            const resultElement = document.getElementById("result");
             const result = add(inputValue);
-            alert(result);
+            resultElement.textContent = result;
         }
     </script>
 </body>
