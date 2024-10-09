@@ -1,14 +1,65 @@
-/* public/css/styles.css */
 body {
-    background-color: #B7E0FF;
+    background-color: #6ACAFC;
     font-family: 'Arial', sans-serif;
 }
 
-.result-block{
+.calculator .card {
+    max-width: 600px; /* Set the maximum width for the card */
+    width: 100%; /* Make it responsive on smaller screens */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.calculator h1 {
+    font-size: 2rem;
+}
+
+.calculator #inputString {
+    border-radius: 0.25rem 0 0 0.25rem !important;
+}
+
+.calculator button {
+    border-radius: 0 0.25rem 0.25rem 0 !important;
+}
+
+.calculator .result-block{
+    margin-top: 1rem;
+}
+
+.calculator .result {
     display: none;
 }
 
-.error {
+.calculator .error {
     color: red;
     font-weight: bold;
+}
+
+@media (max-width: 576px) {
+    .calculator .card {
+        padding: 2rem 1rem; /* Reduce card padding on small screens */
+    }
+
+    .calculator h1 {
+        font-size: 1.3rem;
+    }
+
+    .calculator h4 {
+        font-size: 1rem;
+    }
+
+    .form-group.d-flex {
+        flex-direction: column;
+    }
+
+    .form-group.d-flex input,
+    .form-group.d-flex button {
+        width: 100%;
+        border-radius: 0.25rem !important; /* Full rounded borders on small screens */
+        margin-bottom: 10px; /* Add spacing between input and button */
+    }
+    
+    .calculator .form-group {
+        margin-bottom: 0 !important;
+    }
+    
 }
