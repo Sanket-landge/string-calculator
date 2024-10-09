@@ -3,3 +3,8 @@ body {
     background-color: #B7E0FF;
     font-family: 'Arial', sans-serif;
 }
+
+.error {
+    color: red;
+    font-weight: bold;
+}
