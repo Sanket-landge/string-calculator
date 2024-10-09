@@ -1,0 +1,6 @@
+[build]
+  publish = "public"
+  command = "npm run build" # Only if you have a build step
+
+[functions]
+  node_bundler = "esbuild" # If using serverless functions
