@@ -11,18 +11,19 @@
 </head>
 <body class="container">
 
-    <div class="card p-5 my-5 text-center">
-        <h1 class="my-3">String Calculator</h1>
+    <div class="card p-5 my-5">
+        <h1 class="text-center my-3">String Calculator</h1>
         <div class="form-group d-flex">
             <input type="text" id="inputString" placeholder="Enter numbers (e.g. 1,2,3 or //;\n1;2)">
             <button class="btn btn-primary" onclick="calculate()">Calculate</button>
         </div>
+
+        <div class="mt-3">
+            <h4 class="result-block">Result: <span id="result" class="badge badge-success"></span></h4>
+            <p id="error" class="error"></p>
+        </div>
     </div>
 
-    <div class="mt-3">
-        <h2>Result: <span id="result" class="badge badge-success"></span></h2>
-        <p id="error" class="error"></p>
-    </div>
 
     <!--Scripts-->
     <!--calcutaor.js-->
@@ -36,10 +37,12 @@
             try{
                 const result = add(inputValue);
                 resultElement.textContent = result;
+                resultElement.parentElement.style.display = "block";  // Show the result section
                 errorElement.textContent = "";
             }catch(error){
                 errorElement.textContent = error.message;
                 resultElement.textContent = "";
+                resultElement.parentElement.style.display = "none";  // Hide the result section
             }
 
         }
