@@ -1,12 +1,25 @@
 body {
-    background-color: #6ACAFC;
+    background-color: #ffffff;
+    color: #000000;
     font-family: 'Arial', sans-serif;
+}
+
+.dark-mode-title{
+    margin-left: 0.2rem;
+    font-size: 0.9rem;
 }
 
 .calculator .card {
     max-width: 600px; /* Set the maximum width for the card */
     width: 100%; /* Make it responsive on smaller screens */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: box-shadow 0.3s ease; /* Smooth transition */
+    padding-top: 1rem !important;
+}
+
+/* Add a hover effect for the shadow to become more pronounced */
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .calculator h1 {
@@ -27,6 +40,7 @@ body {
 
 .calculator .result {
     display: none;
+    font-size: 1rem;
 }
 
 .calculator .error {
@@ -41,10 +55,6 @@ body {
 
     .calculator h1 {
         font-size: 1.3rem;
-    }
-
-    .calculator h4 {
-        font-size: 1rem;
     }
 
     .form-group.d-flex {
@@ -62,4 +72,82 @@ body {
         margin-bottom: 0 !important;
     }
     
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode .card {
+    background-color: #333;
+    box-shadow: 0 4px 8px rgba(255,255,255,0.2);
+}
+
+body.dark-mode input,
+body.dark-mode button {
+    background-color: #444;
+    color: #ffffff;
+}
+
+body.dark-mode .error {
+    color: #ff6666;
+}
+
+body.dark-mode .badge-success {
+    background-color: #28a745;
+}
+
+/* Dark Mode Toggle Switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(14px);
+}
+
+/* Rounded switch */
+.slider.round {
+    border-radius: 20px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
 }
